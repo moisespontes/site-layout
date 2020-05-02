@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#E53933">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#E53933">
+	<meta property="og:locale" content="pt_BR">
+	<meta property="og:type" content="website">
+	<meta name="author" content="Moises Pontes">
+	<meta name="reply-to" content="sesiom_assis@hotmail.com">
+	<meta name="description" content="Site institucional da empresa Radisco magazine">
+	<link rel="icon" href="img/favicon.ico" type="imagem/x-icon">
+	<title>Radisco Magazine | Home</title>
+	<!----------------------CSS----------------------------------->
+	<link rel="stylesheet" href="<?php echo URL; ?>assets/css/style.css">
+	<link rel="stylesheet" href="<?php echo URL; ?>assets/css/responsivo.css">
+	<link rel="stylesheet" href="<?php echo URL; ?>assets/css/bootstrap.css">
+	<link rel="stylesheet" href="<?php echo URL; ?>assets/css/component.css">
+	<link rel="stylesheet" href="<?php echo URL; ?>assets/css/social-simptip.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<!----------------------JS------------------------------------>
+	<script>
+		(function(e, t, n) {
+			var r = e.querySelectorAll("html")[0];
+			r.className = r.className.replace(/(^|\s)no-js(\s|$)/, "$1js$2")
+		})(document, window, 0);
+
+	</script>
+	<!-- scroll Down-->
+	<script src="<?php echo URL; ?>assets/js/jquery.min.js"></script>
+	<script src="<?php echo URL; ?>assets/js/scripts.js"></script>
+</head>
+
+<body>
+	<a id="button"></a>
+	<!----------------------início Cabeçalho---------------------->
+	<header id="home" class="cabecalho">
+		<section class="mMenu">
+			<input type="checkbox" id="check">
+			<label for="check">
+				<div class="btn-menu">
+					<span class="hamb"></span>
+				</div>
+
+			</label>
+			<nav class="menu">
+				<ul>
+					<li><a href="#mvv" class="scroll"><i class="fas fa-list-ul"></i> Missão, Visão e Valores</a></li>
+					<li><a href="#sobrNos" class="scroll"><i class="fas fa-mountain"></i> Sobre nós</a></li>
+					<li><a href="#ondeNos" class="scroll"><i class="fas fa-map-marker-alt"></i> Onde nos encontrar</a></li>
+					<li><a href="#trabalhe" class="scroll"><i class="fas fa-user-tie"></i> Trabalhe conosco</a></li>
+					<li><a href="#rod" class="scroll"><i class="fas fa-phone"></i> Contato</a></li>
+					<li><a href="https://radisco.com.br/ofertas"><i class="fas fa-tags"></i> Ofertas</a></li>
+				</ul>
+			</nav>
+		</section>
+		<div class="bar"></div>
+		<div class="logo">
+			<a href="#">
+				<h1>Radisco Magazine</h1>
+			</a>
+		</div>
+		<div class="socialH">
+			<ul class="list-social">
+				<li>
+					<a class="simptip-position-bottom simptip-movable" data-tooltip="WhatsApp Vendas1" href="https://api.whatsapp.com/send?phone=5591991080295" target="_blank"><i class="fab fa-whatsapp"></i>
+					</a>
+					<a class="simptip-position-bottom simptip-movable" data-tooltip="WhatsApp Vendas2" href="https://api.whatsapp.com/send?phone=5591993674398" target="_blank"><i class="fab fa-whatsapp"></i>
+					</a>
+					<a class="simptip-position-bottom simptip-movable" data-tooltip="Facebook" href="https://pt-br.facebook.com/RadiscoCapanema/" target="_blank"><i class="fab fa-facebook"></i>
+					</a>
+					<a class="simptip-position-bottom simptip-movable" data-tooltip="Instagram" href="https://www.instagram.com/radiscomagazine/?hl=pt" target="_blank"><i class="fab fa-instagram"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</header>
+	<!----------------------Fim Cabeçalho---------------------->
+	<!---------------------Início Carousel--------------------->
+	<div id="carouselSite" class="carousel slide carousel-fade" data-ride="carousel">
+		<div class="pointer"><a href="#mvv" class="scroll"><i class="fas fa-angle-down"></i></a></div>
+		<ol class="carousel-indicators">
+			<?php
+        $cont_marc = 0;
+        foreach ($this->Dados['sts_carousels'] as $carousel) {
+            echo "<li data-target='#carouselSite' data-slide-to='$cont_marc' class=''></li>";
+            $cont_marc++;
+        }
+        ?>
+		</ol>
+
+		<div class="carousel-inner">
+
+			<?php
+        $cont_slide = 0;
+        foreach ($this->Dados['sts_carousels'] as $carousel) {
+            extract($carousel);
+            ?>
+			<div class="carousel-item <?php
+            if ($cont_slide == 0) {
+                echo 'active';
+            }
+            ?>">
+				<img class="first-slide img-fluid" src="<?php echo URL . '/assets/imgs/carousel/' . $id . '/' . $imagem; ?>" alt="Primeiro conteúdo">
+				<div class="carousel-caption <?php echo $posicao_text; ?> d-sm-block">
+					<h1 class="carH1 text-white display-4"><?php echo $titulo; ?></h1>
+					<p class=" carP lead text-light"><?php echo $descricao; ?></p>
+
+					<p style="margin-top: .70em"><a class="carBtn btn btn-<?php echo $cor; ?> h1" href="<?php echo $link; ?>" target="_blank" role="button"><?php echo $titulo_botao; ?></a></p>
+				</div>
+			</div>
+			<?php
+            $cont_slide++;
+        }
+        ?>
+		</div>
+		<a href="#carouselSite" class="carousel-control-prev" role="button" data-slide="prev">
+
+			<span class="carousel-control-prev-icon"></span>
+			<span class="sr-only">anterior</span>
+
+		</a>
+		<a href="#carouselSite" class="carousel-control-next" role="button" data-slide="next">
+
+			<span class="carousel-control-next-icon"></span>
+			<span class="sr-only">avançar</span>
+
+		</a>
+
+	</div>
+	<!----------------------Fim Carousel----------------------->
+	<!-------------------Conteúdo Principal-------------------->
+	<main class="cPrincipal">
+		<!--------------------Início M.V.V--------------------->
+		<section id="mvv" class="containe">
+			<div class="row-m mvv">
+
+				<div class="row-mvv anime">
+					<figure class="img-mvv">
+						<img src="<?php echo URL; ?>assets/imgs/img/a-misao.jpg" alt="Missão">
+						<figcaption>
+							<h2>Missão</h2>
+						</figcaption>
+					</figure>
+					<p>"Atender as necessidades de nossos clientes com excelência. Buscando sempre surpreendê-los, participar do crescimento de nossos colaboradores, bem como trabalhar nossa responsabilidade social."
+					</p>
+				</div>
+
+				<div class="row-mvv anime">
+					<figure class="img-mvv">
+						<img src="<?php echo URL; ?>assets/imgs/img/a-visao.jpg" alt="Visão">
+						<figcaption>
+							<h2>Visão</h2>
+						</figcaption>
+					</figure>
+					<p>"Ser reconhecida no setor varejista pela busca constante da excelência na prestação de serviços."
+					</p>
+				</div>
+
+				<div class="row-mvv anime r-m">
+					<figure class="img-mvv">
+						<img src="<?php echo URL; ?>assets/imgs/img/a-valores.jpeg" alt="Valores">
+						<figcaption>
+							<h2>Valores</h2>
+						</figcaption>
+					</figure>
+					<ol class="list">
+						<li>Busca permanente pela alta performace e excelência;</li>
+						<li>Respeito pelas pessoas;</li>
+						<li>Responsabilidade;</li>
+						<li>Comprometimento e lealdade;</li>
+						<li>Humildade para aprender e reapren&shy;der</li>
+						<li>Ética e honestidade;</li>
+						<li>Meritocracia.</li>
+					</ol>
+				</div>
+			</div>
+		</section>
+		<!----------------------Fim M.V.V---------------------->
+		<!------------------Início Sobre Nós------------------->
+		<section id="sobre" class="containe">
+			<article class="historia row-m anime">
+
+				<div class="item-1">
+					<h1>Sobre Nós</h1>
+					<div class="rotulo">
+						<span>-</span>
+					</div>
+				</div>
+
+				<div class="item-2">
+					<p>Tudo começou a quase 60 anos atrás no município de Capanema, nordeste do estado do Pará. Como toda boa história, ela começa simples. A nossa história começou com a venda de apenas três produtos: 			Rádios, Discos e Colchões, produtos esses que deram origem a nossa marca RADISCO.</p>
+					<p>No decor&shy;rer destas quase 6 décadas muita coisa mudou, de apenas 3 produtos, passa&shy;mos a ofertar mais de 100mil itens aos nossos clien&shy;tes. Bus&shy;cando sempre atender todas as necessi&shy;dades dos nossos clientes.</p>
+					<p>De uma pequena loja, chegamos a 16 unida&shy;des de vendas e um centro de distri&shy;buição de última geração, que nos permitem hoje atender 100% do nordeste do estado do Pará.</p>
+				</div>
+
+				<div class="h-2">
+					<div class="a-back">
+						<div class="back">
+							<h1>58 Anos de Radisco Magazine</h1>
+						</div>
+					</div>
+
+					<div class="dstq">
+						<h3>Nestes 58 anos a marca Radisco passou por várias trans&shy;formações!</h3>
+					</div>
+					<div class="bar-2"></div>
+				</div>
+				<div class="item-3">
+					<p>De um quadro inexis&shy;tente, alçamos a um grupo de apro&shy;ximada&shy;mente 400 colabo&shy;radores, profis&shy;sionais esses que são cons&shy;tante&shy;mente quali&shy;ficados, sempre em busca do melhor atendi&shy;mento.</p>
+					<p>Todos devida&shy;mente regis&shy;trados, com direito a: vale alimen&shy;tação, plano de saúde e plano odonto&shy;lógico.</p>
+					<p> Foram enumeras mudanças, e ainda conti&shy;nuamos mudando diari&shy;amente! Mas, a única coisa que não mudou nestes anos todos.</p>
+				</div>
+			</article>
+			<div class="familia">
+				<img src="img/familia.jpg" alt="Família Radisco">
+			</div>
+			<div class="p-03 row-m anime">
+				<h2>Tudo isto, através do brilho de nossa gente</h2>
+				<p>Foi a nossa vontade de montar a melhor equipe de colabo&shy;radores do Pará, nossa vontade de nos tornarmos refe&shy;rência em atendi&shy;mento no varejo paraense, sempre em busca da melhor experiên&shy;cia de compra para os nossos clien&shy;tes, na verdade, para os nossos amigos.</p>
+			</div>
+		</section>
+		<!-------------------Fim Sobre Nós--------------------->
+		<!--------------Início Onde Nos Encontrar-------------->
+		<style>
+			#map {
+				width: 100%;
+				height: 400px;
+			}
+
+		</style>
+		<section id="ondeNos" class="containe encontrar">
+			<div class="col-mapa">
+				<div id="map"></div>
+			</div>
+			<address class="ender anime">
+				<ul class="local">
+					<li>
+						<p>agulha</p>
+					</li>
+					<li>Av.Barão de Capanema Capanema - Centro</li>
+				</ul>
+				<div class="barra"></div>
+				<ul class="cont">
+					<li>
+						<p>email</p>
+					</li>
+					<li>vendasonline@radisco.com.br</li>
+					<li>
+						<p>fone</p>
+					</li>
+					<li>(91) 3462-7300</li>
+				</ul>
+			</address>
+		</section>
+		<!---------------Fim Onde Nos Encontrar---------------->
+		<script>
+			var customLabel = {
+				Matriz: {
+					label: ''
+				},
+				Filial: {
+					label: ''
+				}
+			};
+
+			function initMap() {
+				var map = new google.maps.Map(document.getElementById('map'), {
+					center: new google.maps.LatLng(-1.192411, -47.179356),
+					zoom: 8
+				});
+				var infoWindow = new google.maps.InfoWindow;
+
+				// Change this depending on the name of your PHP or XML file
+				downloadUrl('<?php echo URL;?>app/sts/Views/maps/resultado.php', function(data) {
+					var xml = data.responseXML;
+					var markers = xml.documentElement.getElementsByTagName('marker');
+					Array.prototype.forEach.call(markers, function(markerElem) {
+						var name = markerElem.getAttribute('name');
+						var address = markerElem.getAttribute('address');
+						var type = markerElem.getAttribute('type');
+						var point = new google.maps.LatLng(
+							parseFloat(markerElem.getAttribute('lat')),
+							parseFloat(markerElem.getAttribute('lng')));
+
+						var infowincontent = document.createElement('div');
+						var strong = document.createElement('strong');
+						strong.textContent = name
+						infowincontent.appendChild(strong);
+						infowincontent.appendChild(document.createElement('br'));
+
+						var text = document.createElement('text');
+						text.textContent = address
+						infowincontent.appendChild(text);
+						var img = '<?php echo URL; ?>assets/imgs/marcador/marc.png';
+						var icon = customLabel[type] || {};
+						var marker = new google.maps.Marker({
+							map: map,
+							position: point,
+							label: icon.label,
+							icon: img
+						});
+						marker.addListener('click', function() {
+							infoWindow.setContent(infowincontent);
+							infoWindow.open(map, marker);
+						});
+					});
+				});
+			}
+
+			function downloadUrl(url, callback) {
+				var request = window.ActiveXObject ?
+					new ActiveXObject('Microsoft.XMLHTTP') :
+					new XMLHttpRequest;
+
+				request.onreadystatechange = function() {
+					if (request.readyState == 4) {
+						request.onreadystatechange = doNothing;
+						callback(request, request.status);
+					}
+				};
+
+				request.open('GET', url, true);
+				request.send(null);
+			}
+
+			function doNothing() {}
+
+		</script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByKGU-t5PbM733eoFoP-vAEf-D_XxiSkI&callback=initMap">
+		</script>
+		<!-------------------Início Submit--------------------->
+		<section id="trabalhe" class="containe Submit">
+			<div class="fundo-img">
+				<h1>Trabalhe Conosco</h1>
+			</div>
+			<div class="wrap">
+				<div class="col-formu anime">
+					<div class="formulario">
+						<div class="for-ico">
+							<div class="ico-border">
+								<i class="fas fa-envelope"></i>
+							</div>
+						</div>
+
+						<p style="text-align: center; margin-top: 14px;">
+							<?php
+                        if(isset($_SESSION['msg'])) {
+                            echo $_SESSION['msg'];
+                            unset($_SESSION['msg']);
+                        }
+                        //Manter os valorres do form quando der erro
+                        if(isset($this->Dados['form'])){
+                            $Form = $this->Dados['form'];
+                        }
+                        ?>
+						</p>
+
+						<form id="Form" action="" method="POST" onsubmit="window.location.href = '#trabalhe';" enctype="multipart/form-data">
+							<input type="text" name="nome" maxlength="220" placeholder="nome completo" value="<?php if(isset($Form['nome'])){ echo $Form['nome'] ; } ?>">
+							<input type="text" name="email" maxlength="220" placeholder="seu melhor e-mail" value="<?php if(isset($Form['email'])){ echo $Form['email']; } ?>">
+							<input type="tel" name="fone" id="telefone" maxlength="15" value="<?php if(isset($Form['fone'])){ echo $Form['fone']; } ?>" placeholder="fone: (XX)Xxxxx-xxxx">
+							<select name="cargo">
+								<option selected value="">cargo</option>
+								<option value="ANALISE-DE-CREDITO">Análise de Crédito</option>
+								<option value="AUXILIAR-DE-ESCRITORIO">Aux. de Escritório</option>
+								<option value="CAIXA">Caixa</option>
+								<option value="VENDAS">Deparatamento de Vendas</option>
+								<option value="MOTORISTA">Motorista</option>
+								<option value="MONTADOR">Montador</option>
+								<option value="TI">T.I</option>
+								<option value="VENDAS-EXTERNAS">Vendas Externas</option>
+								<option value="JOVEM-APRENDIZ">Jovem Aprendiz</option>
+								<option value="ESTAGIO">Estágio</option>
+							</select>
+
+							<textarea name="msg" maxlength="300" placeholder="deixe sua mensagem/300"><?php if(isset($Form['msg'])){ echo $Form['msg']; } ?></textarea>
+
+							<input type="file" name="arquivo" id="file-4" class="inputfile inputfile" data-multiple-caption="{count} files selected" multiple />
+
+							<label for="file-4"><span>seu arquivo em PDF (1M)</span><i class="fas fa-file-upload"></i></label>
+							<input type="hidden" name="created" value="<?php echo date("Y-m-d H:i:s");?>">
+							<input name="CadMsgCont" type="submit" value="enviar">
+						</form>
+						<script src="<?php echo URL; ?>assets/js/custom-file-input.js"></script>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!---------------------Fim Submit---------------------->
+	</main>
+	<!----------------------Fim Principal---------------------->
+					<!----------------------Iníco rodapé----------------------->
+					<footer id="rod" class="rodape">
+						<nav class="nav-rod">
+							<ul>
+								<li><a href="#mvv" class="scroll">MISSÃO VISÃO E VALORES</a></li>
+								<li><a href="#ondeNos" class="scroll">ONDE NOS ENCONTRAR</a></li>
+								<li><a href="#trabalhe" class="scroll">TRABALHE CONOSCO</a></li>
+								<li><a href="#sobrNos" class="scroll">SOBRE NÓS</a></li>
+
+							</ul>
+						</nav>
+						<address>
+							<ul>
+								<li><i class="fas fa-envelope"></i>radisco@radisco.com.br</li>
+								<li><i class="fas fa-phone"></i>(91) 3462-7300</li>
+							</ul>
+						</address>
+						<section>
+							<ul class="social-rodape">
+								<li><a class="simptip-position-bottom simptip-movable" data-tooltip="WhatsApp Vendas1" href="https://api.whatsapp.com/send?phone=5591991080295" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+								<li><a class="simptip-position-bottom simptip-movable" data-tooltip="WhatsApp Vendas2" href="https://api.whatsapp.com/send?phone=5591993674398" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+								<li><a class="simptip-position-bottom simptip-movable" data-tooltip="Facebook" href="https://pt-br.facebook.com/RadiscoCapanema/" target="_blank"><i class="fab fa-facebook"></i></a></li>
+								<li><a class="simptip-position-bottom simptip-movable" data-tooltip="Instagram" href="https://www.instagram.com/radiscomagazine/?hl=pt" target="_blank"><i class="fab fa-instagram"></i></a></li>
+							</ul>
+						</section>
+						<section class="copy">
+							<p>&copy; All rights reserved to <strong><span>R</span>adisco <span>M</span>agazine</strong> 2019</p>
+						</section>
+					</footer>
+					<!---------------------- Fim rodapé------------------------>
+					<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+					<script src="<?php echo URL;?>assets/js/jquery.js"></script>
+					<script src="<?php echo URL;?>assets/js/popper.js"></script>
+					<script src="<?php echo URL;?>assets/js/bootstrap.js"></script>
+					<script src="<?php echo URL;?>assets/js/app.js"></script>
+					<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+					<script>
+						var btn = $('#button');
+
+						$(window).scroll(function() {
+							if ($(window).scrollTop() > 300) {
+								btn.addClass('show');
+							} else {
+								btn.removeClass('show');
+							}
+						});
+
+						btn.on('click', function(e) {
+							e.preventDefault();
+							$('html, body').animate({
+								scrollTop: 0
+							}, '2500');
+						});
+
+					</script>
+				</body>
+
+				</html>

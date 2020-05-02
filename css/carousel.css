@@ -1,0 +1,69 @@
+.carH1 {
+	font-size: .80em;
+}
+
+.carP {
+	font-size: .55em;
+}
+
+.carBtn {
+	font-size: .35em;
+}
+
+@media only screen and (min-width: 375px) {
+	.carH1 {
+		font-size: 1.2em
+	}
+
+	.carP {
+		font-size: .80em
+	}
+
+	.carBtn {
+		font-size: .60em;
+	}
+}
+
+@media only screen and (min-width: 600px) {
+	.carH1 {
+		font-size: 2.5em
+	}
+
+	.carP {
+		font-size: 1.2em
+	}
+
+	.carBtn {
+		font-size: .90em;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.carH1 {
+		font-size: 3.2em
+	}
+
+	.carP {
+		font-size: 1.35em
+	}
+
+	.carBtn {
+		font-size: 1em;
+	}
+}
+
+@media only screen and (min-width: 1280px) {
+	.carH1 {
+		font-size: 3.5em;
+	}
+
+	.carP {
+		font-size: 1.5em;
+		margin-top: 12px;
+	}
+
+	.carBtn {
+		font-size: 1.1em;
+		margin: 12px 0
+	}
+}

@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+.ofertas {
+	padding: 3%;
+	top: 50px;
+	position: relative;
+}
+
+.ofertas > h1 {
+	font-size: 1.3em;
+	text-align: left;
+	margin: 10px 0;
+}
+
+.ofertas p {
+	margin-top: -5px;
+	margin-bottom: 20px;
+	width: 90px;
+	height: 2px;
+	border-radius: 1px;
+	background-image: linear-gradient(to right, #E53933, #1565C0);
+}
+
+.row-of {
+	width: 80%;
+	display: flex;
+	flex-flow: column;
+	margin: 0 auto;
+}
+
+.col-of {
+	width: 100%;
+	box-shadow: 2px 2px 3px #8b8b8b, -1px 0 3px #8b8b8b;
+	border-radius: 2px;
+	padding: 20px;
+	margin: 15px 0;
+}
+
+.img-of img {
+	width: 100%;
+	height: 100%;
+}
+
+.label-of,
+.label-of a {
+	margin-top: 10px;
+	color: #616161;
+	transition: all .5 ease;
+}
+
+.label-of ul {
+	display: flex;
+	flex-flow: column;
+	font-size: .9em;
+}
+
+.label-of li {
+	font-family: 'Roboto', sans-serif;
+	line-height: 23px;
+}
+
+.col-of li:nth-child(2) {
+	margin: 9px 0;
+}
+
+.col-of li:first-child {
+	text-transform: uppercase;
+}
+.label-of span {
+	font-weight: bold;
+	font-size: 1.14em;
+}
+
+.label-of i {
+	font-size: 2em;
+	color: #21C741;
+}
+
+.label-of a {
+	display: flex;
+	margin: 0 15px 0 0;
+	align-items: center;
+	justify-content: space-between
+}
+
+.label-of a:hover {
+	color: #21C741;
+}
+
+/*################# RESPONSIVE #####################*/
+/*################# SMAL DEVICE ####################*/
+@media screen and (min-width: 375px) {
+	.label-of ul {
+		font-size: .97em;
+	}
+}
+
+@media screen and (min-width: 480px) {
+
+	.ofertas {
+		padding: 10px 6%;
+	}
+
+	.ofertas > h1 {
+		font-size: 1.5em;
+	}
+
+	.ofertas p {
+		margin-top: -2px;
+		width: 120px;
+	}
+
+	.row-of {
+		width: 70%;
+	}
+
+	.row-of .slick-prev {
+		left: -50px;
+	}
+
+	.row-of .slick-next {
+		right: -50px;
+	}
+}
+
+/*################# MEDIUM DEVICE ##################*/
+@media screen and (min-width: 600px) {
+
+	.ofertas {
+		padding: 10px 8%;
+	}
+
+	.ofertas > h1 {
+		font-size: 1.6em;
+	}
+
+	.ofertas p {
+		margin-top: 0;
+	}
+
+	.row-of {
+		width: 100%;
+		flex-flow: wrap;
+		justify-content: space-between;
+
+	}
+
+	.col-of {
+		width: 47%;
+		margin: 14px 0;
+
+	}
+
+}
+
+@media screen and (min-width: 768px) {
+
+	.ofertas {
+		padding: 10px 12%;
+	}
+
+	.col-of {
+		width: 47%;
+		margin: 16px 0;
+
+	}
+}
+
+@media screen and (min-width: 1024px) {
+
+	.ofertas {
+		padding: 15px 4%;
+	}
+
+	.ofertas > h1 {
+		font-size: 1.7em;
+	}
+
+	.col-of {
+		width: 23%;
+		margin: 12px 0;
+	}
+	
+	.label-of ul {
+		font-size: .90em;
+	}
+}
+
+/*################# LARGE DEVICE ##################*/
+@media screen and (min-width: 1280px) {
+
+	.row-of {
+		margin-bottom: 30px;
+	}
+
+	.col-of {
+		width: 18%;
+	}
+}

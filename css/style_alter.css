@@ -1,0 +1,601 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+/*====================== RESET =========================*/
+* {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	border: none;
+	outline: none;
+	font-weight: 300;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #fff;
+	font-family: 'Quicksand', sans-serif;
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+img {
+	max-width: 100%;
+}
+
+li {
+	list-style: none;
+	display: inline
+}
+
+/*==================== CABEÇALHO =======================*/
+.cabecalho {
+	width: 100%;
+	float: left;
+	background-image: linear-gradient(to right, #E53933, #1565C0);
+	padding: 8px 18px;
+	position: fixed;
+	z-index: 3;
+}
+
+.mMenu {
+	float: left;
+	width: 30px;
+}
+
+.btn-menu {
+	width: 46px;
+	height: 36px;
+	float: left;
+	position: relative;
+	background-color: transparent;
+	z-index: 2;
+	text-align: center;
+	left: -8px;
+}
+
+.logo {
+	display: none;
+}
+
+.hamb {
+	display: block;
+	position: relative;
+	background-color: #FFF;
+	width: 30px;
+	height: 3px;
+	transition: all .5s ease-in-out;
+	border-radius: 7px;
+	top: 16px;
+	left: 8px;
+}
+
+.hamb:after,
+.hamb:before {
+	content: '';
+	display: block;
+	position: relative;
+	background-color: #FFF;
+	width: 30px;
+	height: 3px;
+	border-radius: 7px;
+	transition: all .5s ease-in-out;
+}
+
+.hamb:after {
+	top: 8px;
+}
+
+.hamb:before {
+	top: -10px;
+}
+
+.menu {
+	font-family: 'Quicksand', sans-serif;
+	top: 53px;
+	width: 250px;
+	float: left;
+	position: absolute;
+	background-color: #D25C4F;
+	transition: all .5s ease;
+	z-index: 1;
+	margin-left: -272px;
+}
+
+.menu li {
+	display: list-item;
+	padding: 13px 0;
+}
+
+.menu li a {
+	color: #fff;
+	border-left: 3px solid #fff;
+	font-size: 1.08em;
+	padding: 13px;
+}
+
+.menu li a:hover {
+	border-left: 5px solid #1565C0;
+}
+
+#check {
+	display: none;
+}
+
+#check:checked ~ label .hamb {
+	transform: rotate(45deg);
+}
+
+#check:checked ~ label .hamb:before {
+	transform: rotate(90deg);
+	top: 0;
+}
+
+#check:checked ~ label .hamb:after {
+	transform: rotate(90deg);
+	top: -3px;
+}
+
+#check:checked ~ .menu {
+	z-index: 16;
+	margin-left: -18px;
+}
+
+.socialH {
+	width: 60%;
+	float: right;
+	word-spacing: .5em;
+}
+
+.list-social {
+	width: 100%;
+	position: relative;
+	z-index: 1;
+	display: flex;
+	justify-content: space-between;
+}
+
+.list-social li {
+	display: inline-block;
+	text-align: center;
+}
+
+.list-social a {
+	color: #FFF;
+	font-size: 2em;
+	transition: all .4s ease;
+}
+
+.list-social a:hover {
+	color: #bbdefb;
+}
+
+/*==================== CAROUSEL ========================*/
+.carousel-caption {
+	font-family: 'Quicksand', sans-serif;
+}
+
+.carousel {
+	top: 53px;
+}
+
+.pointer {
+	display: none;
+}
+
+/*===================== RODAPE =========================*/
+.rodape {
+	width: 100%;
+	float: left;
+	margin-top: 50px;
+	background: rgba(229, 49, 51, .90);
+	padding: 18px 5%;
+	font-family: 'Quicksand', sans-serif;
+}
+
+.nav-rod {
+	font-size: .8em;
+	text-align: center;
+}
+
+.nav-rod li {
+	display: inline-block;
+	padding: 6px 3%;
+}
+
+.nav-rod a {
+	color: #fff;
+	border-left: 2px solid transparent;
+	transition: all .5s ease;
+	padding-left: 2px;
+}
+
+.nav-rod a:hover {
+	color: #fff;
+	border-left: 2px solid #fff;
+}
+
+.rodape address {
+	padding: 10px 0;
+	color: #fff;
+	font-size: .9em;
+	letter-spacing: 2px;
+}
+
+.rodape address ul {
+	display: flex;
+	flex-flow: column;
+	align-items: center
+}
+
+.rodape address li {
+	display: inline-flex;
+	padding: 5px 0;
+}
+
+.rodape address i {
+	margin-right: 5px;
+	font-size: 1.3em;
+}
+
+.social-rodape {
+	width: 100%;
+	padding: 10px 0;
+	text-align: center;
+}
+
+.social-rodape li {
+	font-size: 1.8em;
+	display: inline;
+	padding: 0 5%;
+}
+
+.social-rodape a {
+	color: #fff;
+	opacity: .8;
+	transition: all .4s ease;
+}
+
+.social-rodape a:hover {
+	opacity: 1;
+}
+
+.copy {
+	text-align: center;
+	color: #fff;
+	font-size: .76em;
+	padding: 10px 0;
+	border-top: 1px solid #fff;
+}
+
+.copy span {
+	font-weight: bold;
+}
+
+/*=================== MOVE TO TOP ======================*/
+#button {
+	background: url(../img/top.png) center center/ 30px no-repeat;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	position: fixed;
+	bottom: 60px;
+	right: 15px;
+	transition: all .5s ease;
+	visibility .5s;
+	opacity: 0;
+	visibility: hidden;
+	z-index: 1000;
+	color: #fff;
+	font-size: 2.7em;
+}
+
+#button:active {
+	background-color: #555;
+}
+
+#button.show {
+	opacity: 1;
+	visibility: visible;
+}
+
+/*================= ANIMAÇÃO SCROLL ===================*/
+.anime {
+	opacity: 0;
+	transform: translate3d(-100px, 0, 0);
+	transition: .3s;
+}
+
+.anime-start {
+	opacity: 1;
+	transform: translate3d(0, 0, 0);
+}
+
+/*====================== Mobile First / Media Quaries ======================*/
+/*============================= Mobile Device ============================*/
+@media only screen and (min-width: 375px) {
+	.bar {
+		float: left;
+		width: 2px;
+		height: 25px;
+		border: 1px solid #fff;
+		margin-top: 6px;
+		margin-left: 12px;
+		border-radius: 7px;
+	}
+
+	.logo {
+		display: inline-block;
+		float: left;
+		width: 40px;
+	}
+
+	.logo h1 {
+		font-size: 0;
+		width: 35px;
+		height: 35px;
+		background: url(../img/logo-min.png) left center/31px no-repeat;
+		margin: 1px 0 0 11px;
+	}
+
+	.rodape {
+		padding: 20px 3%;
+	}
+
+	.nav-rod {
+		font-size: 1em;
+	}
+
+	.rodape address {
+		padding: 10px 0;
+		font-size: 1em;
+	}
+
+	.social-rodape li {
+		font-size: 2em;
+	}
+
+	.copy {
+		font-size: .9em;
+	}
+}
+
+@media only screen and (min-width: 480px) {
+	.menu li a {
+		font-size: 1.12em;
+	}
+
+	.socialH {
+		width: 45%;
+	}
+
+	.rodape {
+		padding: 20px 6%;
+	}
+
+	.nav-rod {
+		word-spacing: .2em;
+	}
+
+	.social-rodape li {
+		font-size: 2.1em;
+	}
+
+	#button {
+		right: 22px;
+	}
+}
+
+/*============================= Medium Device ============================*/
+@media only screen and (min-width: 600px) {
+	.logo {
+		width: 110px;
+	}
+
+	.logo h1 {
+		width: 110px;
+		background: url(../img/logo.png) left center/110px no-repeat;
+	}
+
+	.list li {
+		padding: 10px 0;
+	}
+	
+	.socialH {
+		width: 35%;
+	}
+	
+	.rodape {
+		padding: 30px 8%;
+		display: flex;
+		flex-flow: row wrap;
+	}
+	
+	.nav-rod {
+		width: 30%;
+		padding-left: 3%;
+	}
+	
+	.nav-rod li {
+		display: list-item;
+		padding: 0;
+		text-align: left;
+		line-height: 40px;
+	}
+	
+	.row-r {
+		width: 70%;
+		display: flex;
+		padding-left: 3%;
+		flex-flow: column;
+		margin-bottom: 20px;
+	}
+	
+	.rodape address {
+		padding: 0;
+	}
+
+	.rodape address ul {
+		line-height: 40px;
+		align-items: flex-start;
+	}
+	.rodape address li {
+		padding: 0;
+		display: flex;
+		align-items: center;
+	}
+	.social-rodape {
+		display: flex;
+		align-items:flex-start;
+	}
+	.social-rodape li {
+		padding: 0;
+		margin: 0 40px 0 0;
+	}
+	
+	.copy {
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+
+	.rodape {
+		padding: 20px 10%;
+	}
+	
+	.nav-rod,
+	.row-r {
+		padding-left: 8%;
+	}
+	
+	#button {
+		right: 30px;
+	}
+}
+
+@media only screen and (min-width: 960px) {
+
+	#button {
+		right: 55px;
+	}
+
+}
+
+/*========================= Largue Device Desktops ========================*/
+@media only screen and (min-width: 1024px) {
+	.cabecalho {
+		padding: 8px 15px;
+	}
+
+	.logo {
+		width: 100px;
+		float: left;
+	}
+
+	.logo h1 {
+		width: 110px;
+		margin: 0;
+	}
+
+	.pointer {
+		display: inline;
+		width: 10x;
+		height: 20px;
+		position: absolute;
+		font-size: 2em;
+		left: 49%;
+		z-index: 2;
+		animation: seta-pointer .5s linear infinite alternate;
+	}
+
+	@keyframes seta-pointer {
+		0% {
+			bottom: 38px;
+		}
+
+		100% {
+			bottom: 30px;
+		}
+	}
+
+	.pointer a {
+		color: #E53933;
+	}
+
+	.bar {
+		position: absolute;
+		left: 150px;
+		margin-left: 0;
+		margin-top: 5px;
+	}
+
+	.btn-menu {
+		display: none;
+	}
+
+	.menu {
+		background-color: transparent;
+		width: 65%;
+		top: 1px;
+		left: 425px;
+		z-index: 10;
+		position: fixed;
+	}
+
+	#check:checked ~ .menu {
+		margin-left: -272px;
+	}
+
+	.menu li {
+		display: inline-block;
+		padding: 17px 0;
+	}
+
+	.menu li:first-child {
+		margin-left: 10px
+	}
+
+	.menu li a {
+		font-size: .92em;
+		border-left: none;
+		padding: 15px 8px;
+		border-bottom: 3px solid #;
+	}
+
+	.menu li a:hover {
+		border-left: none;
+		border-bottom: 3px solid #FFF;
+	}
+
+	.menu i {
+		display: none;
+	}
+
+	.socialH {
+		width: 202px;
+	}
+
+	.rodape {
+		padding: 25px 12%
+	}
+	
+	.nav-rod,
+	.row-r {
+		padding-left: 14%;
+	}
+	
+	.copy {
+		padding-top: 20px;
+	}
+}
+
+@media only screen and (min-width: 1280px) {
+	.menu li a {
+		font-size: 1em;
+	}
+}
